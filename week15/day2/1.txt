@@ -1,0 +1,22 @@
+lock
+
+semaphore mutex=1 space=5, product=0;
+producer
+{
+  p(space)
+  p(mutex)
+   n++
+  v(mutex)
+  v(product) 
+}
+
+consumer
+{
+  p(product)
+  p(mutex)
+  printf();
+  v(mutex)
+  v(space)
+}
+
+
